@@ -7,21 +7,42 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
             background-color: #f0f0f0;
+            text-align: center;
         }
 
-        h1 {
-            position: absolute;
-            top: 20px;
+        .container {
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .header_text {
             font-size: 2rem;
+            margin-bottom: 20px;
             color: #333;
+        }
+
+        .gif_container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         .wobble {
@@ -45,31 +66,45 @@
             100% { opacity: 1; }
         }
 
-        .gif-container {
-            width: 300px; /* Angepasste Größe */
-            height: 300px; /* Angepasste Größe */
-            position: relative;
-            cursor: pointer;
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            border: none; /* Verhindert den sichtbaren Rahmen */
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
     </style>
 </head>
 <body>
 
-    <h1>Happy Birthday!</h1>
+    <div class="container">
+        <h1 class="header_text">Happy Birthday!</h1>
 
-    <div id="gif1" class="gif-container" onclick="gifClicked('gif1')">
-        <iframe src="https://giphy.com/embed/0gPOewYMqs4oUYJzSu" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-    </div>
+        <div id="gif1" class="gif_container" onclick="gifClicked('gif1')">
+            <iframe src="https://giphy.com/embed/0gPOewYMqs4oUYJzSu" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
 
-    <div id="gif2" class="gif-container" style="display: none;" onclick="gifClicked('gif2')">
-        <iframe src="https://giphy.com/embed/hhut7D136GMQU" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <div id="gif2" class="gif_container" style="display: none;" onclick="gifClicked('gif2')">
+            <iframe src="https://giphy.com/embed/hhut7D136GMQU" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
     </div>
 
     <script>
@@ -91,6 +126,17 @@
                 gif2.style.display = 'block';
                 gif2.classList.add('fadeIn');
             }
+        }
+
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
         }
     </script>
 
