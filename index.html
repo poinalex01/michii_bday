@@ -82,12 +82,22 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        #fingerGif {
+            position: absolute;
+            top: -100px; /* Positioniert das Finger-Gif über dem ersten Gif */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Passt die Größe an */
+            max-width: 300px;
+        }
     </style>
 </head>
 <body>
 
     <div id="gif1" class="gif-container" onclick="gifClicked('gif1')">
         <img src="https://media0.giphy.com/media/0gPOewYMqs4oUYJzSu/giphy.gif" alt="Gif 1">
+        <img id="fingerGif" src="https://media0.giphy.com/media/wK7OxwuSbNctvwgBmu/giphy.gif" alt="Finger zeigt auf Gif">
     </div>
 
     <div id="gif2" class="gif-container" style="display: none;" onclick="gifClicked('gif2')">
