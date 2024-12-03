@@ -26,6 +26,18 @@
             color: #ffffff;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             display: none; /* Anfangs unsichtbar */
+            animation: slideIn 2s ease-out; /* Hinzugefügte Animation */
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .wobble {
