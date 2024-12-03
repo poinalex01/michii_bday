@@ -25,6 +25,7 @@
             font-weight: bold;
             color: #ffffff;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            display: none; /* Anfangs unsichtbar */
         }
 
         .wobble {
@@ -56,6 +57,7 @@
             max-width: 500px; /* Maximale Breite */
             height: auto;
             cursor: pointer;
+            position: relative;
         }
 
         img {
@@ -64,11 +66,16 @@
             border: none; /* Entfernt den Rahmen */
             border-radius: 15px; /* Optionale Abrundung der Ecken */
         }
+
+        #gif2 {
+            position: absolute; /* Damit es direkt an der Mitte ausgerichtet bleibt */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 <body>
-
-    <h1>Happy Birthday!</h1>
 
     <div id="gif1" class="gif-container" onclick="gifClicked('gif1')">
         <img src="https://media0.giphy.com/media/0gPOewYMqs4oUYJzSu/giphy.gif" alt="Gif 1">
@@ -78,6 +85,8 @@
         <img src="https://media0.giphy.com/media/hhut7D136GMQU/giphy.gif" alt="Gif 2">
     </div>
 
+    <h1 id="birthdayText">Happy Birthday!</h1>
+
     <script>
         let clickCount = 0;
 
@@ -86,6 +95,7 @@
 
             const gif1 = document.getElementById('gif1');
             const gif2 = document.getElementById('gif2');
+            const birthdayText = document.getElementById('birthdayText');
 
             if (clickCount <= 3) {
                 gif1.classList.add('wobble');
@@ -96,6 +106,7 @@
                 gif1.style.display = 'none';
                 gif2.style.display = 'block';
                 gif2.classList.add('fadeIn');
+                birthdayText.style.display = 'block'; // Zeige den Happy Birthday Text nach dem 3. Klick
             }
         }
     </script>
