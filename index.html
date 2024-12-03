@@ -14,14 +14,17 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #a0c4ff, #f0f8ff); /* Sanfter Hellblau-Verlauf */
+            color: #333;
         }
 
         h1 {
             position: absolute;
             top: 20px;
-            font-size: 2rem;
-            color: #333;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .wobble {
@@ -46,19 +49,22 @@
         }
 
         .gif-container {
-            width: auto; /* Breite auf auto setzen */
-            height: auto; /* Höhe auf auto setzen */
-            max-width: 90%; /* Maximalbreite für das GIF */
-            max-height: 90%; /* Maximale Höhe für das GIF */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%; /* Flexible Breite */
+            max-width: 500px; /* Maximale Breite */
+            height: auto;
             position: relative;
             cursor: pointer;
         }
 
         img {
             width: 100%;
-            height: 100%;
+            height: auto;
             position: absolute;
-            border: none; /* Verhindert den sichtbaren Rahmen */
+            border: none; /* Entfernt den Rahmen */
+            border-radius: 15px; /* Optionale Abrundung der Ecken */
         }
     </style>
 </head>
