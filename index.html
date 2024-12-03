@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            padding-top: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,52 +16,27 @@
             margin: 0;
             background: linear-gradient(135deg, #a0c4ff, #f0f8ff); /* Sanfter Hellblau-Verlauf */
             color: #333;
-            overflow: hidden;
-        }
-
-        /* Gradienten, die die Seiten abdunkeln */
-        ::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-            z-index: 1;
         }
 
         h1 {
             position: absolute;
-            bottom: 20px; /* Text etwas weiter runter */
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 3rem;
+            top: 20px;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #ffffff;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             display: none; /* Anfangs unsichtbar */
-            animation: slideIn 2s ease-out, glow 1.5s ease-in-out infinite alternate;
+            animation: slideIn 2s ease-out; /* Hinzugefügte Animation */
         }
 
-        /* Animation für den Text (Einblenden und Glühen) */
         @keyframes slideIn {
             0% {
-                transform: translate(-50%, 50px);
+                transform: translateY(-50px);
                 opacity: 0;
             }
             100% {
-                transform: translate(-50%, 0);
+                transform: translateY(0);
                 opacity: 1;
-            }
-        }
-
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
-            }
-            100% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
             }
         }
 
@@ -94,7 +70,6 @@
             height: auto;
             cursor: pointer;
             position: relative;
-            z-index: 2;
         }
 
         img {
@@ -109,18 +84,6 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
-
-        /* Responsives Design für kleinere Bildschirme */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
-                bottom: 10px;
-            }
-            .gif-container {
-                width: 90%;
-                max-width: 400px;
-            }
         }
     </style>
 </head>
