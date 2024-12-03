@@ -9,6 +9,19 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            font-size: 2rem;
+            color: #333;
         }
 
         .wobble {
@@ -33,14 +46,15 @@
         }
 
         .gif-container {
-            width: 100%;
-            height: 0;
-            padding-bottom: 100%;
+            width: 300px; /* Angepasste Größe */
+            height: 300px; /* Angepasste Größe */
             position: relative;
             cursor: pointer;
         }
 
         iframe {
+            width: 100%;
+            height: 100%;
             position: absolute;
         }
     </style>
@@ -50,11 +64,11 @@
     <h1>Happy Birthday!</h1>
 
     <div id="gif1" class="gif-container" onclick="gifClicked('gif1')">
-        <iframe src="https://giphy.com/embed/0gPOewYMqs4oUYJzSu" width="480" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/stitch-liloandstitch-detallitospandora-0gPOewYMqs4oUYJzSu">via GIPHY</a></p>
+        <iframe src="https://giphy.com/embed/0gPOewYMqs4oUYJzSu" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     </div>
 
     <div id="gif2" class="gif-container" style="display: none;" onclick="gifClicked('gif2')">
-        <iframe src="https://giphy.com/embed/hhut7D136GMQU" width="480" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/disney-hhut7D136GMQU">via GIPHY</a></p>
+        <iframe src="https://giphy.com/embed/hhut7D136GMQU" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     </div>
 
     <script>
